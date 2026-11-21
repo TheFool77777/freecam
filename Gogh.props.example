@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Absolute path to the folder containing gogh.exe. -->
+    <GoghDir>D:\SteamLibrary\steamapps\common\gogh Focus with Your Avatar</GoghDir>
+  </PropertyGroup>
+</Project>

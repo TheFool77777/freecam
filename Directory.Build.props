@@ -1,0 +1,32 @@
+<Project>
+
+  <Import Project="$(MSBuildThisFileDirectory)Gogh.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)Gogh.props')" />
+
+  <PropertyGroup>
+    <GoghDir Condition="'$(GoghDir)' == ''">$(GOGH_DIR)</GoghDir>
+    <GoghDir Condition="'$(GoghDir)' == '' AND Exists('$(ProgramFiles) (x86)\Steam\steamapps\common\gogh Focus with Your Avatar')">$(ProgramFiles) (x86)\Steam\steamapps\common\gogh Focus with Your Avatar</GoghDir>
+    <GoghDir Condition="'$(GoghDir)' == '' AND Exists('D:\SteamLibrary\steamapps\common\gogh Focus with Your Avatar')">D:\SteamLibrary\steamapps\common\gogh Focus with Your Avatar</GoghDir>
+
+    <MelonDir>$(GoghDir)\MelonLoader</MelonDir>
+    <MelonNet6Dir>$(MelonDir)\net6</MelonNet6Dir>
+    <Il2CppAsmDir>$(MelonDir)\Il2CppAssemblies</Il2CppAsmDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <FreecamVersion>1.0.0</FreecamVersion>
+    <Authors>thefool</Authors>
+    <RepositoryUrl>https://github.com/TheFool77777/freecam</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <Target Name="VerifyGoghDir" BeforeTargets="BeforeBuild">
+    <Error Condition="'$(GoghDir)' == '' OR !Exists('$(GoghDir)\gogh.exe')"
+           Text="找不到 gogh.exe。請複製 Gogh.props.example 為 Gogh.props 並設定遊戲路徑，或使用 -p:GoghDir=...。" />
+    <Error Condition="!Exists('$(MelonNet6Dir)\MelonLoader.dll')"
+           Text="找不到 MelonLoader。請先把 MelonLoader 安裝到 gogh，並至少啟動遊戲一次。" />
+    <Error Condition="!Exists('$(Il2CppAsmDir)\UnityEngine.CoreModule.dll')"
+           Text="找不到 IL2CPP reference assemblies。請先用 MelonLoader 啟動 gogh 一次。" />
+  </Target>
+
+</Project>
