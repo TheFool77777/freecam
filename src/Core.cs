@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(freecam.Core), "freecam", "1.0.0", "thefool", "https://github.com/TheFool77777/freecam")]
+[assembly: MelonInfo(typeof(freecam.Core), "freecam", "1.0.0", "Yakou", "https://github.com/TheFool77777/freecam")]
 [assembly: MelonGame("gogh Japan", "gogh")]
 [assembly: MelonPriority(100)]
 

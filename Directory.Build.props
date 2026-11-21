@@ -15,7 +15,7 @@
 
   <PropertyGroup>
     <FreecamVersion>1.0.0</FreecamVersion>
-    <Authors>thefool</Authors>
+    <Authors>Yakou</Authors>
     <RepositoryUrl>https://github.com/TheFool77777/freecam</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>

@@ -97,7 +97,7 @@ Mods\freecam.dll
 
 ## Author
 
-**thefool**
+**Yakou**
 
 ## License
 
